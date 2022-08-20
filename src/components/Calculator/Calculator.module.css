@@ -1,0 +1,9 @@
+.item {
+    background-color: blue;
+}
+
+.calculator {
+    width: 55vw;
+    min-height: 60vh;
+    background-color: red;
+}
