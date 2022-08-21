@@ -1,0 +1,6 @@
+.calculator-screen {
+  background-color: aquamarine;
+  font-size: 7rem;
+  text-align: right;
+  grid-area: sc;
+}

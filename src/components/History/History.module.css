@@ -1,3 +1,5 @@
-.item {
-    background-color: aqua;
+.aside {
+  background-color: tomato;
+
+  grid-area: aside;
 }

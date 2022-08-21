@@ -1,3 +1,6 @@
-.item {
-  background-color: blueviolet;
+.header {
+  background-color: bisque;
+
+  grid-area: header;
+  /* height: 100px; */
 }

@@ -5,7 +5,7 @@ import styles from './Header.module.css';
 const Header = () => {
   console.log('Header rendered');
   return (
-    <header className={styles.item}>
+    <header className={styles.header}>
       <h1>Smart Calculator</h1>
     </header>
   );
