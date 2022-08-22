@@ -9,15 +9,16 @@ html,
 body {
   width: 100%;
   height: 100%;
+  background-color: #353535;
+  font-family: 'Silkscreen', cursive;
 }
 
 #root {
   height: 100%;
   display: grid;
-  grid-template-rows: 5% 90% 5%;
-  grid-template-columns: 75% 25%;
+  grid-template-rows: 90% 10%;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-template-areas:
-    'header header'
-    'main aside'
-    'footer footer';
+    'header main aside'
+    'header footer aside';
 }

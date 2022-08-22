@@ -1,5 +1,5 @@
 main {
-  background-color: orange;
+  /* background-color: #dbf0fe; */
 
   grid-area: main;
   /* display: table; */
@@ -9,26 +9,34 @@ main {
 }
 
 .calculator {
-  background-color: blanchedalmond;
-  width: 50%;
-  height: 80%;
-  margin-left: 30%;
-  padding: 10px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 100;
+  background-color: #000000;
+  /* width: 400px; */
+  /* height: 500px; */
+  /* margin-left: 33.3%; */
+  /* padding-top: 200000000px; */
+  padding: 80px 20px 40px 20px;
+  border-radius: 25px;
+  /* border: #000001 0.5px solid; */
 
   row-gap: 10px;
   grid-column-gap: 10px;
 
   display: grid;
-  grid-template-rows: 2fr repeat(5, 1fr);
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 120px repeat(5, 60px);
+  grid-template-columns: repeat(4, 60px);
   grid-template-areas:
     'sc sc sc sc'
-    'ac del pct div'
+    'clr del pct div'
     'no7 no8 no9 mul'
     'no4 no5 no6 sb'
     'no1 no2 no3 ad'
     'no0 dt pom eq';
-}
-
-.calculator__button-container {
+  /* 'sc sc sc sc'
+    'ac del pct .'
+    '. . . .'
+    '. . . .'
+    '. . . .'
+    '. . pom .'; */
 }

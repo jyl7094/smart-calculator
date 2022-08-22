@@ -1,5 +1,6 @@
 # Smart Calculator
 
+![A snapshot of Smart Calculator](./SmartCalculator.png)
 A calculator that keeps track of previous calculations and reuses them.
 
 ## Description
@@ -27,4 +28,6 @@ npm start
 
 ## Authors
 
-Jay Lee (GitHub: [jyl7094](https://github.com/jyl7094))
+Jay Lee
+GitHub: [jyl7094](https://github.com/jyl7094)
+LinkedIn: [jayleeswe](https://www.linkedin.com/in/jayleeswe/s)

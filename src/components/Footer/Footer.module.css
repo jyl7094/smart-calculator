@@ -1,9 +1,13 @@
 .footer {
-  background-color: blue;
   grid-area: footer;
-  /* height:100%;
-  width:100%; */
-  /* margin: auto; */
-  /* height:  */
   text-align: center;
+  color: #f6f6f6;
+}
+
+.github {
+  margin: 10px 8px 0 0;
+}
+
+.linkedin {
+  margin: 10px 0 0 8px;
 }

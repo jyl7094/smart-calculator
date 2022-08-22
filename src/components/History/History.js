@@ -5,7 +5,7 @@ import styles from './History.module.css';
 const History = () => {
   return (
     <aside className={styles.aside}>
-      <p>I'm aside</p>
+      {/* <p>I'm aside</p> */}
     </aside>
   );
 };

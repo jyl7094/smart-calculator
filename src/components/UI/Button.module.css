@@ -1,0 +1,236 @@
+.button {
+  /* width: 850px; */
+  /* height: auto; */
+  /* border-radius: 50%; */
+  /* width: 60%;*/
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  /* opacity: 1; */
+  transition: .2s ease-out;
+}
+
+.button__AC {
+  grid-area: clr;
+  background-color: #9f9f9f;
+  color: #000000;
+}
+
+.button__AC:active {
+  background-color: #d9d9d9;
+  /* transition: .5s ease-out; */
+  /* animation: btnColorChange 0.5s; */
+  /* animation: myfirst 5s 1; */
+}
+
+.button__C {
+  grid-area: clr;
+  background-color: #9f9f9f;
+  color: #000000;
+}
+
+.button__C:active {
+  background-color: #d9d9d9;
+}
+
+.button__⌫ {
+  grid-area: del;
+  background-color: #9f9f9f;
+  color: #000000;
+}
+
+.button__⌫:active {
+  background-color: #d9d9d9;
+}
+
+.button__\% {
+  grid-area: pct;
+  background-color: #9f9f9f;
+  color: #000000;
+}
+
+.button__\%:active {
+  background-color: #d9d9d9;
+}
+
+.button__\+\/- {
+  grid-area: pom;
+  background-color: #9f9f9f;
+  color: #000000;
+}
+
+.button__\+\/-:active {
+  background-color: #d9d9d9;
+}
+
+.button__÷ {
+  grid-area: div;
+  background-color: #fd9e2b;
+  color: #ffffff;
+  font-size: 32.5px;
+  /* font-weight: 100; */
+}
+
+.button__÷:active {
+  background-color: #ffffff;
+  color: #fd9e2b;
+}
+
+.button__× {
+  grid-area: mul;
+  background-color: #fd9e2b;
+  color: #ffffff;
+  font-size: 32.5px;
+}
+
+.button__×:active {
+  background-color: #ffffff;
+  color: #fd9e2b;
+}
+
+.button__− {
+  grid-area: sb;
+  background-color: #fd9e2b;
+  color: #ffffff;
+  font-size: 32.5px;
+}
+
+.button__−:active {
+  background-color: #ffffff;
+  color: #fd9e2b;
+}
+
+.button__\+ {
+  grid-area: ad;
+  background-color: #fd9e2b;
+  color: #ffffff;
+  font-size: 32.5px;
+}
+
+.button__\+:active {
+  background-color: #ffffff;
+  color: #fd9e2b;
+}
+
+.button__\= {
+  grid-area: eq;
+  background-color: #fd9e2b;
+  color: #ffffff;
+  font-size: 32.5px;
+}
+
+.button__\=:active {
+  background-color: #ffffff;
+  color: #fd9e2b;
+}
+
+.button__\. {
+  grid-area: dt;
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.button__\.:active {
+  background-color: #737373;
+}
+
+.button__0 {
+  grid-area: no0;
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.button__0:active {
+  background-color: #737373;
+}
+
+.button__1 {
+  grid-area: no1;
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.button__1:active {
+  background-color: #737373;
+}
+
+.button__2 {
+  grid-area: no2;
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.button__2:active {
+  background-color: #737373;
+}
+
+.button__3 {
+  grid-area: no3;
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.button__3:active {
+  background-color: #737373;
+}
+
+.button__4 {
+  grid-area: no4;
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.button__4:active {
+  background-color: #737373;
+}
+
+.button__5 {
+  grid-area: no5;
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.button__5:active {
+  background-color: #737373;
+}
+
+.button__6 {
+  grid-area: no6;
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.button__6:active {
+  background-color: #737373;
+}
+
+.button__7 {
+  grid-area: no7;
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.button__7:active {
+  background-color: #737373;
+}
+
+.button__8 {
+  grid-area: no8;
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.button__8:active {
+  background-color: #737373;
+}
+
+.button__9 {
+  grid-area: no9;
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.button__9:active {
+  background-color: #737373;
+}
