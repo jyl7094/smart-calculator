@@ -1,7 +1,7 @@
 # Smart Calculator
 
 ![A snapshot of Smart Calculator](./SmartCalculator.png)
-A calculator that keeps track of previous calculations and reuses them.
+A calculator that keeps track of previous calculations and allows users to reuse them.
 
 ## Description
 
