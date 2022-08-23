@@ -1,31 +1,34 @@
-import React, { useEffect, useReducer } from 'react';
+import React, { useReducer } from 'react';
 
 // import * as math from 'mathjs';
 
 import CalcContext from './calc-context';
 
-// const UPDATE = 'UPDATE';
-
 const defaultState = {
   input: '0',
   expr: '',
   showC: false,
-  del: false,
+  warning: false,
 };
 
 const calcReducer = (state, action) => {
   let updatedInput;
   let updatedExpr;
-  let updatedShowC;
+  let updatedWarning = false;
+
+  if (action.removeWarning) {
+    return {
+      ...state,
+      warning: false,
+    };
+  }
   switch (action.input) {
     case 'AC':
       return defaultState;
     case 'C':
       return {
-        input: '0',
+        ...defaultState,
         expr: state.expr,
-        showC: false,
-        del: false,
       };
     case '⌫':
       if (state.input === 'Error') {
@@ -42,67 +45,53 @@ const calcReducer = (state, action) => {
         }
       }
       return {
+        ...state,
         input: updatedInput,
-        expr: state.expr,
-        showC: state.showC,
-        del: true,
       };
     case '%':
-      // if (state.input.length >= 7) {
-      // This need to be fixed!
-      // return {
-      //     input: 'Error',
-      //     expr: state.expr,
-      //     showC: state.showC,
-      //   };
-      // }
       if (state.input === 'Error') {
         return state;
       }
       updatedInput = (Number(state.input) / 100).toString();
+      if (updatedInput.length >= 10) {
+        updatedInput = state.input;
+        updatedWarning = true;
+      }
       return {
+        ...state,
         input: updatedInput,
-        expr: state.expr,
-        showC: state.showC,
-        del: state.del,
+        warning: updatedWarning,
       };
-    // break;
     case '+/-':
-      // maybe check state.expr includes % 0 to return error for using +/- when Error -> -0 -this stage->
-      // updatedShowC = state.del ? true : false;
+      // maybe check state.expr includes % 0 or (%) to return error for using +/- when Error -> -0 -this stage->
       if (state.input === 'Error' || state.input === '0') {
         updatedInput = '-0';
         return {
+          ...state,
           input: updatedInput,
-          expr: state.expr,
-          // showC: updatedShowC,
-          showC: state.updatedShowC,
-          del: state.del,
         };
       } else if (state.input === '-0') {
         updatedInput = '0';
         return {
+          ...state,
           input: updatedInput,
-          expr: state.expr,
-          // showC: updatedShowC,
-          showC: state.updatedShowC,
-          del: state.del,
         };
-      } else if (state.input[0] === '-') {
+      }
+      if (state.input[0] === '-') {
         updatedInput = state.input.substring(1, state.input.length);
       } else {
         updatedInput = '-'.concat(state.input);
       }
       return {
+        ...state,
         input: updatedInput,
-        expr: state.expr,
         showC: true,
-        del: state.del,
       };
     case '÷':
     case '×':
     case '−':
     case '+':
+    // break;
     case '=':
     // break;
     case '.':
@@ -111,10 +100,9 @@ const calcReducer = (state, action) => {
       }
       updatedInput = state.input + action.input;
       return {
+        ...state,
         input: updatedInput,
-        expr: state.expr,
         showC: true,
-        del: state.del,
       };
     case '0':
     case '1':
@@ -132,12 +120,9 @@ const calcReducer = (state, action) => {
       if (state.input === '0') {
         updatedInput = action.input;
         if (action.input === '0') {
-          updatedShowC = state.del ? true : false;
           return {
+            ...state,
             input: updatedInput,
-            expr: state.expr,
-            showC: updatedShowC,
-            del: state.del,
           };
         }
       } else if (state.input === '-0') {
@@ -146,10 +131,9 @@ const calcReducer = (state, action) => {
         updatedInput = state.input + action.input;
       }
       return {
+        ...state,
         input: updatedInput,
-        expr: state.expr,
         showC: true,
-        del: state.del,
       };
     default:
       return defaultState;
@@ -163,15 +147,20 @@ const CalcProvider = (props) => {
     dispatch({ input: input });
   };
 
+  const handleWarning = () => {
+    dispatch({ removeWarning: true });
+  };
+
   const calcCtx = {
     input: calcState.input,
     expr: calcState.expr,
     showC: calcState.showC,
-    del: calcState.del,
+    warning: calcState.warning,
     update: handleUpdate,
+    removeWarning: handleWarning,
   };
 
-  // useEffect(() => console.log(calcCtx.expr), [calcCtx]);
+  // useEffect(() => console.log(calcCtx.warning), [calcCtx.warning]);
 
   return (
     <CalcContext.Provider value={calcCtx}>

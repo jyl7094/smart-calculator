@@ -11,6 +11,11 @@
   padding-right: 2px;
 }
 
+.warning {
+  font-family: 'Silkscreen', cursive;
+  font-size: 10px;
+}
+
 .input {
   height: 75%;
   padding-top: 15px;

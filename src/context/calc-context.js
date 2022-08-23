@@ -4,8 +4,9 @@ const CalcContext = React.createContext({
   val: '0',
   expr: '',
   showC: false,
-  del: false,
+  warning: false,
   update: (val) => {},
+  removeWarning: () => {},
 });
 
 export default CalcContext;
