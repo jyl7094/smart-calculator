@@ -26,7 +26,7 @@ Use the commandline below in the location where the app is downloaded.
 npm start
 ```
 
-## Authors
+## Author
 
 Jay Lee\
 GitHub: [jyl7094](https://github.com/jyl7094)\

@@ -1,8 +1,10 @@
 import React from 'react';
 
 const CalcContext = React.createContext({
-  val: '',
+  val: '0',
   expr: '',
+  showC: false,
+  del: false,
   update: (val) => {},
 });
 

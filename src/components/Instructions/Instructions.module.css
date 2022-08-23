@@ -1,16 +1,16 @@
 .container {
-    margin: 50px 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: #ffffff;
-    line-height: 1.5;
+  margin: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #ffffff;
+  line-height: 1.5;
 }
 
 .ol {
-    margin:0 0 0 30px;
+  margin: 0 0 0 30px;
 }
 
 .greeting {
-    text-align: center;
+  text-align: center;
 }

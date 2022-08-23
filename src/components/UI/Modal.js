@@ -13,7 +13,7 @@ const Modal = (props) => {
         <svg
           onClick={props.onClose}
           className={styles.close}
-          fill='#f6f6f6'
+          fill='#ffffff'
           xmlns='http://www.w3.org/2000/svg'
           width='26'
           height='26'

@@ -1,8 +1,5 @@
 main {
-  /* background-color: #dbf0fe; */
-
   grid-area: main;
-  /* display: table; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,20 +9,15 @@ main {
   font-family: Helvetica, sans-serif;
   font-weight: 100;
   background-color: #000000;
-  /* width: 400px; */
-  /* height: 500px; */
-  /* margin-left: 33.3%; */
-  /* padding-top: 200000000px; */
   padding: 80px 20px 40px 20px;
   border-radius: 25px;
-  /* border: #000001 0.5px solid; */
 
   row-gap: 10px;
   grid-column-gap: 10px;
 
   display: grid;
-  grid-template-rows: 120px repeat(5, 60px);
-  grid-template-columns: repeat(4, 60px);
+  grid-template-rows: 120px repeat(5, 62.5px);
+  grid-template-columns: repeat(4, 62.5px);
   grid-template-areas:
     'sc sc sc sc'
     'clr del pct div'
@@ -33,10 +25,4 @@ main {
     'no4 no5 no6 sb'
     'no1 no2 no3 ad'
     'no0 dt pom eq';
-  /* 'sc sc sc sc'
-    'ac del pct .'
-    '. . . .'
-    '. . . .'
-    '. . . .'
-    '. . pom .'; */
 }

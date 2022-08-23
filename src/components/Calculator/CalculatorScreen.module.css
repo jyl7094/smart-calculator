@@ -1,8 +1,29 @@
 .calculator-screen {
   background-color: #000000;
-  font-size: 60px;
   text-align: right;
   grid-area: sc;
-  /* border-radius: 15px; */
-  color: #f6f6f6;
+  height: 100%;
+  color: #ffffff;
+}
+
+.expr {
+  height: 25%;
+  padding-right: 2px;
+}
+
+.input {
+  height: 75%;
+  padding-top: 15px;
+  font-size: 65px;
+  /* overflow-x: auto; */
+}
+
+.eightcharfontsize {
+  padding-top: 25px;
+  font-size: 55px;
+}
+
+.tencharfontsize {
+  padding-top: 30px;
+  font-size: 50px;
 }

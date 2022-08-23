@@ -30,9 +30,47 @@ const buttons = [
 const Calculator = () => {
   const calcCtx = useContext(CalcContext);
 
-  const generateButton = (f) => (
-    <Button key={f} function={f} id={f} onClick={() => handleClick(f)} />
-  );
+  const generateButton = (f) => {
+    let buttonType;
+    switch (f) {
+      case 'AC':
+      case 'C':
+      case '⌫':
+      case '%':
+      case '+/-':
+        buttonType = 'gry';
+        break;
+      case '÷':
+      case '×':
+      case '−':
+      case '+':
+      case '=':
+        buttonType = 'or';
+        break;
+      case '.':
+      case '0':
+      case '1':
+      case '2':
+      case '3':
+      case '4':
+      case '5':
+      case '6':
+      case '7':
+      case '8':
+      case '9':
+      default:
+        buttonType = 'blk';
+    }
+    return (
+      <Button
+        key={f}
+        function={f}
+        id={f}
+        buttontype={buttonType}
+        onClick={() => handleClick(f)}
+      />
+    );
+  };
 
   const buttonsList = buttons.map((button) => generateButton(button));
 
@@ -44,7 +82,8 @@ const Calculator = () => {
     <main>
       <div className={styles.calculator}>
         <CalculatorScreen />
-        {calcCtx.input ? generateButton('C') : generateButton('AC')}
+        {calcCtx.showC ? generateButton('C') : generateButton('AC')}
+        {/* {generateButton('AC')} */}
         {buttonsList}
       </div>
     </main>
