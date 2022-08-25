@@ -9,6 +9,8 @@
 .expr {
   height: 25%;
   padding-right: 2px;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 .warning {

@@ -15,7 +15,6 @@ const App = () => {
   };
 
   const handleClose = () => {
-    console.log('h')
     setShowInstructions(false);
   };
 

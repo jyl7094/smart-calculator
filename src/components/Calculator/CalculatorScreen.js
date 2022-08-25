@@ -16,6 +16,7 @@ const CalculatorScreen = () => {
   } else {
     fontSize = '';
   }
+  // const display = expr === 'Error' ? '' : expr; 
 
   useEffect(() => {
     let timer;
@@ -30,7 +31,7 @@ const CalculatorScreen = () => {
   const display = calcCtx.warning ? (
     <p className={`${styles.expr} ${styles.warning}`}>{warningMsg}</p>
   ) : (
-    <p className={styles.expr}>{expr}</p>
+    <p className={styles.expr}>{expr === 'Error' ? '' : expr}</p>
   );
 
   return (

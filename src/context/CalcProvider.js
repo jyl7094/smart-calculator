@@ -1,8 +1,15 @@
 import React, { useReducer } from 'react';
 
-// import * as math from 'mathjs';
+import * as math from 'mathjs';
 
 import CalcContext from './calc-context';
+
+const op = {
+  '÷': '/',
+  '×': '*',
+  '−': '-',
+  '+': '+',
+};
 
 const defaultState = {
   input: '0',
@@ -15,6 +22,7 @@ const calcReducer = (state, action) => {
   let updatedInput;
   let updatedExpr;
   let updatedWarning = false;
+  let operator;
 
   if (action.removeWarning) {
     return {
@@ -71,6 +79,12 @@ const calcReducer = (state, action) => {
           input: updatedInput,
         };
       } else if (state.input === '-0') {
+        if (state.expr === 'Error') {
+          return {
+            ...state,
+            input: 'Error',
+          };
+        }
         updatedInput = '0';
         return {
           ...state,
@@ -91,8 +105,39 @@ const calcReducer = (state, action) => {
     case '×':
     case '−':
     case '+':
+      // Needs fix when dealing with new input after evalutaing using = 
+      if (state.input === 'Error') {
+        return state;
+      }
+      const eq = math.evaluate(state.expr + state.input);
+      console.log(state.expr);
+      if (eq === Infinity) {
+        return {
+          ...state,
+          input: 'Error',
+          expr: 'Error',
+        };
+      }
+      if (state.expr.length >= 84) {
+        return {
+          ...state,
+          warning: true,
+        };
+      }
+      operator = op[action.input];
+      updatedExpr = state.expr + state.input + operator;
+      return {
+        ...state,
+        input: '0',
+        expr: updatedExpr,
+      };
     // break;
     case '=':
+      return {
+        ...state,
+        expr: state.expr + state.input, 
+        input: math.evaluate(state.expr + state.input).toString(),
+      };
     // break;
     case '.':
       if (state.input.includes('.') || state.input.length >= 9) {
@@ -114,7 +159,7 @@ const calcReducer = (state, action) => {
     case '7':
     case '8':
     case '9':
-      if (state.input.length >= 9) {
+      if (state.input.length >= 9 || state.input === 'Error ') {
         return state;
       }
       if (state.input === '0') {
