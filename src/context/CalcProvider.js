@@ -105,7 +105,7 @@ const calcReducer = (state, action) => {
     case '×':
     case '−':
     case '+':
-      // Needs fix when dealing with new input after evalutaing using = 
+      // Needs fix when dealing with new input after evalutaing using =
       if (state.input === 'Error') {
         return state;
       }
@@ -135,7 +135,7 @@ const calcReducer = (state, action) => {
     case '=':
       return {
         ...state,
-        expr: state.expr + state.input, 
+        expr: state.expr + state.input,
         input: math.evaluate(state.expr + state.input).toString(),
       };
     // break;
