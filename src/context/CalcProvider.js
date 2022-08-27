@@ -21,6 +21,12 @@ const defaultState = {
   warning: false,
 };
 
+/**
+ *
+ * @param state pevious state
+ * @param action updated input
+ * @returns updated state
+ */
 const calcReducer = (state, action) => {
   let updatedInput;
   let updatedExpr;
