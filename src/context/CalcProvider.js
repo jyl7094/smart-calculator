@@ -4,6 +4,9 @@ import * as math from 'mathjs';
 
 import CalcContext from './calc-context';
 
+/**
+ * I need to use this
+ */
 const op = {
   '÷': '/',
   '×': '*',
