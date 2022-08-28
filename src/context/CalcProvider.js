@@ -33,6 +33,9 @@ const calcReducer = (state, action) => {
   let updatedWarning = false;
   let operator;
 
+  /*
+  Need one more state checking to access and retrieve the history.
+  */
   if (action.removeWarning) {
     return {
       ...state,
