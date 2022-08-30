@@ -208,6 +208,9 @@ const CalcProvider = (props) => {
     dispatch({ removeWarning: true });
   };
 
+  /**
+   * Need to add functions pertaining to history.
+   */
   const calcCtx = {
     input: calcState.input,
     expr: calcState.expr,
